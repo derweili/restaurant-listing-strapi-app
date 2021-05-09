@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restaurants",
+  "info": {
+    "name": "Restaurant",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "categories": {
+      "via": "restaurants",
+      "collection": "category"
+    },
+    "Address": {
+      "type": "string"
+    },
+    "ZIP": {
+      "type": "integer"
+    },
+    "City": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "float"
+    },
+    "longitude": {
+      "type": "float"
+    },
+    "debug": {
+      "type": "text"
+    }
+  }
+}
