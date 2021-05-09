@@ -1,8 +1,8 @@
 {
-  "name": "app",
+  "name": "restaurant-listing-strapi-app",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "Restaurant Listing App with Strapi",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
