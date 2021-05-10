@@ -53,7 +53,7 @@ module.exports = {
       X2 = + coordinates.lat + radius,
       Y2 = + coordinates.lon + radius;
 
-		const distanceInMilesSql = `( 6371 * acos( cos( radians(${+coordinates.lat}) ) 
+		const distanceInKmSql = `( 6371 * acos( cos( radians(${+coordinates.lat}) ) 
 			* cos( radians( restaurants.latitude ) ) 
 			* cos( radians( restaurants.longitude ) - radians(${+coordinates.lon}) ) 
 			+ sin( radians(${+coordinates.lat}) ) 
@@ -64,7 +64,7 @@ module.exports = {
 		const result = await knex('restaurants')
 			.whereBetween('latitude', [X1, X2])
 			.whereBetween('longitude', [Y1, Y2])
-			.column(['*', knex.raw(distanceInMilesSql)])
+			.column(['*', knex.raw(distanceInKmSql)])
 			.having('distance', '<', radius);
 
 
